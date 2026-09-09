@@ -4,14 +4,13 @@ import { notFound } from 'next/navigation';
 import { getMeal } from '@/lib/meals';
 import classes from './page.module.css';
 
-export default function MealDetailsPage({ params }) {
-  const meal = getMeal(params.mealSlug);
+export default async function MealDetailsPage({ params }) {
+  const { mealSlug } = await params;
+  const meal = getMeal(mealSlug);
 
   if (!meal) {
     notFound();
   }
-
-  meal.instructions = meal.instructions.replace(/\n/g, '<br />');
 
   return (
     <>
@@ -31,10 +30,10 @@ export default function MealDetailsPage({ params }) {
         <p
           className={classes.instructions}
           dangerouslySetInnerHTML={{
-            __html: meal.instructions,
+            __html: meal.instructions.replace(/\n/g, '<br />'),
           }}
         ></p>
       </main>
     </>
   );
-}
+}

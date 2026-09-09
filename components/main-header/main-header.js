@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import classes from "./main-header.module.css";
-import MainHeaderBackground from "./main-header-backgroud";
+import MainHeaderBackground from './main-header-background';
 import NavLink from "./nav-link";
 
 export default function MainHeader() {
@@ -13,8 +13,8 @@ export default function MainHeader() {
           <Image
             src="/images/logo.png"
             alt="A plate with food in it"
-            width={1024}
-            height={1024}
+            width={80}
+            height={80}
             priority={true}
           />
           NextLevel Food
