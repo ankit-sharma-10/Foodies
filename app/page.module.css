@@ -3,7 +3,7 @@
   gap: 3rem;
   margin: 3rem auto;
   width: 90%;
-  max-width: 75rem;
+  max-width: var(--max-width);
 }
 
 .slideshow {
@@ -12,17 +12,17 @@
 }
 
 .hero {
-  color: #ddd6cb;
+  color: var(--color-text);
   font-size: 1.5rem;
 }
 
 .hero h1 {
   font-size: 2rem;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading);
   letter-spacing: 0.15rem;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #f9572a, #ffc905);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary-light));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -39,7 +39,7 @@
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  background: linear-gradient(90deg, #f9572a, #ff9b05);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
   color: #ffffff;
   font-weight: bold;
   text-decoration: none;
@@ -47,26 +47,26 @@
 
 .cta a:hover,
 .cta a:active {
-  background: linear-gradient(90deg, #fd4715, #f9b241);
+  background: linear-gradient(90deg, var(--color-hover-start), var(--color-hover-end));
 }
 
 .cta a:first-child {
   background: transparent;
   font-weight: normal;
-  color: #ff9b05;
+  color: var(--color-secondary);
   padding-left: 0;
 }
 
 .cta a:first-child:hover,
 .cta a:first-child:active {
   background: transparent;
-  color: #f9b241;
+  color: var(--color-hover-end);
 }
 
 .section {
   display: flex;
   flex-direction: column;
-  color: #ddd6cb;
+  color: var(--color-text);
   font-size: 1.5rem;
   max-width: 50rem;
   width: 90%;

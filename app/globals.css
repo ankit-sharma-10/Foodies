@@ -1,16 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;700&display=swap');
 
+:root {
+  --color-primary: #f9572a;
+  --color-secondary: #ff9b05;
+  --color-secondary-light: #ffc905;
+  --color-accent: #ff8a05;
+  --color-accent-light: #f9b331;
+  --color-hover-start: #fd4715;
+  --color-hover-end: #f9b241;
+  --color-text: #ddd6cb;
+  --color-text-muted: #cfa69b;
+  --color-text-input: #b3aea5;
+  --color-bg: #282c34;
+  --color-bg-input: #1c2027;
+  --color-bg-input-focus: #1f252d;
+  --color-border-input: #454952;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Quicksand', sans-serif;
+  --max-width: 75rem;
+}
+
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Quicksand', sans-serif;
+  font-family: var(--font-body);
 }
 
 body {
   margin: 0;
-  background: radial-gradient(#282c34, #282c34);
+  background-color: var(--color-bg);
 }
 
 .not-found,
@@ -26,12 +46,12 @@ body {
   font-weight: 900;
   color: #262626;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #f9572a, #ffc905);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: cover;
   background-position: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading);
 }
 
 .not-found p,

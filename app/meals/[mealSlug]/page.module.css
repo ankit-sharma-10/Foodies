@@ -21,7 +21,7 @@
 
 .headerText {
   padding: 0.5rem 1rem 0 1rem;
-  color: #ddd6cb;
+  color: var(--color-text);
   max-width: 40rem;
   animation: fade-slide-in-from-right 1s ease-out forwards;
 }
@@ -30,18 +30,18 @@
   margin: 0;
   font-size: 3.5rem;
   text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading);
   text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 .creator {
   font-size: 1.5rem;
-  color: #cfa69b;
+  color: var(--color-text-muted);
   font-style: italic;
 }
 
 .creator a {
-  background: linear-gradient(90deg, #f9572a, #ff8a05);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -49,7 +49,7 @@
 
 .creator a:hover,
 .creator a:active {
-  background: linear-gradient(90deg, #f9572a, #ff8a05);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -105,4 +105,3 @@
     transform: translateY(0);
   }
 }
-

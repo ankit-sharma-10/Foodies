@@ -4,6 +4,22 @@ import { notFound } from 'next/navigation';
 import { getMeal } from '@/lib/meals';
 import classes from './page.module.css';
 
+export async function generateMetadata({ params }) {
+  const { mealSlug } = await params;
+  const meal = getMeal(mealSlug);
+
+  if (!meal) {
+    return {
+      title: 'Meal Not Found — NextLevel Food',
+    };
+  }
+
+  return {
+    title: `${meal.title} — NextLevel Food`,
+    description: meal.summary,
+  };
+}
+
 export default async function MealDetailsPage({ params }) {
   const { mealSlug } = await params;
   const meal = getMeal(mealSlug);

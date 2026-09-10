@@ -2,7 +2,12 @@ import Link from "next/link";
 import { getMeals } from "@/lib/meals";
 import classes from "./page.module.css";
 import MealsGrid from "@/components/meals/meals-grid";
-import { Suspense } from "react";
+import { Suspense } from 'react';
+
+export const metadata = {
+  title: 'Meals — NextLevel Food',
+  description: 'Browse delicious meals shared by our community of food lovers.',
+};
 
 async function Meals() {
   const meals = await getMeals();
