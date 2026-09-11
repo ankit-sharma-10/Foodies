@@ -24,26 +24,25 @@ export default function Home() {
         <section className={classes.section}>
           <h2>How it works</h2>
           <p>
-            NextLevel Food is a platform for foodies to share their favorite
-            recipes with the world. It&apos;s a place to discover new dishes, and to
-            connect with other food lovers.
+            NextLevel Food is a community platform where passionate food lovers
+            share their favorite home-cooked recipes, culinary tips, and cooking stories
+            with the world.
           </p>
           <p>
-            NextLevel Food is a place to discover new dishes, and to connect
-            with other food lovers.
+            Browse diverse meals, follow clear step-by-step instructions, and share your own
+            kitchen creations complete with appetizing photos.
           </p>
         </section>
 
         <section className={classes.section}>
           <h2>Why NextLevel Food?</h2>
           <p>
-            NextLevel Food is a platform for foodies to share their favorite
-            recipes with the world. It&apos;s a place to discover new dishes, and to
-            connect with other food lovers.
+            Authentic cooking thrives on real experiences. Unlike commercial cooking sites,
+            every dish here is shared by home chefs who crafted it with love in their own kitchens.
           </p>
           <p>
-            NextLevel Food is a place to discover new dishes, and to connect
-            with other food lovers.
+            Connect with like-minded food lovers, discover mouth-watering recipes from all over
+            the globe, and inspire others on your culinary journey.
           </p>
         </section>
       </main>

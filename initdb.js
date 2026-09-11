@@ -162,6 +162,15 @@ const dummyMeals = [
     creator: 'Sophia Green',
     creator_email: 'sophiagreen@example.com',
   },
+  {
+    title: 'Paneer Butter Masala',
+    slug: 'paneer-butter-masala',
+    image: '/images/paneer-butter-masala.jpg',
+    summary: 'Blend of tomatoes onion and cottage chesse',
+    instructions: 'Please Gravy then prepare the dish',
+    creator: 'Ankit',
+    creator_email: 'ankit1357951@gmail.com',
+  },
 ];
 
 db.prepare(`

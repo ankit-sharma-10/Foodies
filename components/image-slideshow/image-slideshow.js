@@ -13,13 +13,13 @@ import tomatoSaladImg from '@/public/images/tomato-salad.jpg';
 import classes from './image-slideshow.module.css';
 
 const images = [
-  { image: burgerImg, alt: 'A delicious, juicy burger' },
-  { image: curryImg, alt: 'A delicious, spicy curry' },
-  { image: dumplingsImg, alt: 'Steamed dumplings' },
-  { image: macncheeseImg, alt: 'Mac and cheese' },
-  { image: pizzaImg, alt: 'A delicious pizza' },
-  { image: schnitzelImg, alt: 'A delicious schnitzel' },
-  { image: tomatoSaladImg, alt: 'A delicious tomato salad' },
+  { id: 'burger', image: burgerImg, alt: 'A delicious, juicy burger' },
+  { id: 'curry', image: curryImg, alt: 'A delicious, spicy curry' },
+  { id: 'dumplings', image: dumplingsImg, alt: 'Steamed dumplings' },
+  { id: 'macncheese', image: macncheeseImg, alt: 'Mac and cheese' },
+  { id: 'pizza', image: pizzaImg, alt: 'A delicious pizza' },
+  { id: 'schnitzel', image: schnitzelImg, alt: 'A delicious schnitzel' },
+  { id: 'tomato-salad', image: tomatoSaladImg, alt: 'A delicious tomato salad' },
 ];
 
 export default function ImageSlideshow() {
@@ -36,13 +36,14 @@ export default function ImageSlideshow() {
   }, []);
 
   return (
-    <div className={classes.slideshow}>
+    <div className={classes.slideshow} aria-label="Featured community dishes slideshow" role="region">
       {images.map((image, index) => (
         <Image
-          key={index}
+          key={image.id}
           src={image.image}
           className={index === currentImageIndex ? classes.active : ''}
           alt={image.alt}
+          priority={index === 0}
         />
       ))}
     </div>

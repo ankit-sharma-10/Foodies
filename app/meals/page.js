@@ -5,7 +5,7 @@ import MealsGrid from "@/components/meals/meals-grid";
 import { Suspense } from 'react';
 
 export const metadata = {
-  title: 'Meals — NextLevel Food',
+  title: 'All Meals',
   description: 'Browse delicious meals shared by our community of food lovers.',
 };
 

@@ -63,6 +63,7 @@
 .instructions {
   font-size: 1.25rem;
   line-height: 1.5;
+  white-space: pre-line;
   background-color: #6e6464;
   color: #13120f;
   border-radius: 8px;

@@ -6,7 +6,7 @@ import eventsIcon from '@/public/icons/events.png';
 import classes from './page.module.css';
 
 export const metadata = {
-  title: 'Community — NextLevel Food',
+  title: 'Community',
   description: 'Join our community and share your favorite recipes with food lovers around the world.',
 };
 
