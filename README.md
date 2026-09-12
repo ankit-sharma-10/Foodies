@@ -23,9 +23,15 @@ Browse mouth-watering recipes shared by food lovers around the globe, view detai
 ### Core Framework & Runtime
 | Package | Version | Description |
 |---|---|---|
-| [`next`](https://nextjs.org/) | `^16.3.4` | App Router framework with Turbopack bundler & Server Actions |
-| [`react`](https://react.dev/) | `^19.2.8` | React 19 core library (`useActionState`, Server Components) |
-| [`react-dom`](https://react.dev/) | `^19.2.8` | React DOM bindings and form hooks (`useFormStatus`) |
+| [`next`](https://nextjs.org/) | `^16.3.5` | App Router framework with Turbopack bundler & Server Actions |
+| [`react`](https://react.dev/) | `^19.3.0` | React 19 core library (`useActionState`, Server Components) |
+| [`react-dom`](https://react.dev/) | `^19.3.0` | React DOM bindings and form hooks (`useFormStatus`) |
+
+### Cloud Media & Image Management
+| Package | Version | Description |
+|---|---|---|
+| [`cloudinary`](https://cloudinary.com/documentation/node_integration) | `^2.11.0` | Official Cloudinary Node.js SDK for secure server-side upload streams |
+| [`next-cloudinary`](https://next-cloudinary.spacejelly.dev/) | `^6.19.0` | Cloudinary integration for Next.js with automatic optimization |
 
 ### Database & Security Utilities
 | Package | Version | Description |
@@ -38,7 +44,7 @@ Browse mouth-watering recipes shared by food lovers around the globe, view detai
 | Package | Version | Description |
 |---|---|---|
 | [`eslint`](https://eslint.org/) | `^9.20.0` | Next-generation flat configuration linter (`eslint.config.mjs`) |
-| [`eslint-config-next`](https://www.npmjs.com/package/eslint-config-next) | `^16.3.4` | Next.js Core Web Vitals ESLint ruleset |
+| [`eslint-config-next`](https://www.npmjs.com/package/eslint-config-next) | `^16.3.5` | Next.js Core Web Vitals ESLint ruleset |
 
 ---
 
@@ -62,7 +68,17 @@ Browse mouth-watering recipes shared by food lovers around the globe, view detai
    npm install
    ```
 
-3. **Initialize the database**:
+3. **Configure environment variables**:
+   Copy the example environment file and set your Cloudinary credentials:
+   ```bash
+   cp .env.example .env.local
+   ```
+   > You can also provision an instant Claimable Cloud by running:
+   > ```bash
+   > npx @cloudinary/cloud
+   > ```
+
+4. **Initialize the database**:
    Seed the SQLite database with initial dummy recipes:
    ```bash
    npm run seed
@@ -70,12 +86,12 @@ Browse mouth-watering recipes shared by food lovers around the globe, view detai
    ```
    > This creates a local `meals.db` file populated with initial community meals.
 
-4. **Run the development server**:
+5. **Run the development server**:
    ```bash
    npm run dev
    ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+6. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
 ---
 
@@ -137,5 +153,5 @@ foodies/
 
 ## 💡 Production Deployment Notes
 
-- **File System Storage**: Uploaded recipe images are saved locally to `public/images/`. In serverless environments (such as Vercel or AWS Lambda), the local filesystem is ephemeral and read-only at runtime. For production deployments, integrate cloud object storage (e.g., AWS S3, Cloudinary, or Supabase Storage).
+- **Cloud Media Storage (Cloudinary)**: Uploaded recipe images are streamed directly to Cloudinary using the official Node SDK (`cloudinary.uploader.upload_stream`) and served with Next.js image optimization via `res.cloudinary.com` remote patterns. In offline/development environments without Cloudinary credentials, the app gracefully falls back to local storage in `public/images/`.
 - **SQLite Database**: `better-sqlite3` creates a local file (`meals.db`). For distributed or serverless deployments, consider SQLite cloud alternatives like Turso/LibSQL or hosted PostgreSQL/MySQL.

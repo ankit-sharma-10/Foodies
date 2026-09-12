@@ -2,6 +2,14 @@
 const nextConfig = {
   agentRules: false,
   serverExternalPackages: ['better-sqlite3'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

@@ -5,7 +5,7 @@ const dummyMeals = [
   {
     title: 'Juicy Cheese Burger',
     slug: 'juicy-cheese-burger',
-    image: '/images/burger.jpg',
+    image: 'https://res.cloudinary.com/a1rxstx7/image/upload/v1789219705/foodies/burger.jpg',
     summary:
       'A mouth-watering burger with a juicy beef patty and melted cheese, served in a soft bun.',
     instructions: `
@@ -27,7 +27,7 @@ const dummyMeals = [
   {
     title: 'Spicy Curry',
     slug: 'spicy-curry',
-    image: '/images/curry.jpg',
+    image: 'https://res.cloudinary.com/a1rxstx7/image/upload/v1789219705/foodies/curry.jpg',
     summary:
       'A rich and spicy curry, infused with exotic spices and creamy coconut milk.',
     instructions: `
@@ -52,7 +52,7 @@ const dummyMeals = [
   {
     title: 'Homemade Dumplings',
     slug: 'homemade-dumplings',
-    image: '/images/dumplings.jpg',
+    image: 'https://res.cloudinary.com/a1rxstx7/image/upload/v1789219705/foodies/dumplings.jpg',
     summary:
       'Tender dumplings filled with savory meat and vegetables, steamed to perfection.',
     instructions: `
@@ -74,7 +74,7 @@ const dummyMeals = [
   {
     title: 'Classic Mac n Cheese',
     slug: 'classic-mac-n-cheese',
-    image: '/images/macncheese.jpg',
+    image: 'https://res.cloudinary.com/a1rxstx7/image/upload/v1789219705/foodies/macncheese.jpg',
     summary:
       "Creamy and cheesy macaroni, a comforting classic that's always a crowd-pleaser.",
     instructions: `
@@ -99,7 +99,7 @@ const dummyMeals = [
   {
     title: 'Authentic Pizza',
     slug: 'authentic-pizza',
-    image: '/images/pizza.jpg',
+    image: 'https://res.cloudinary.com/a1rxstx7/image/upload/v1789219705/foodies/pizza.jpg',
     summary:
       'Hand-tossed pizza with a tangy tomato sauce, fresh toppings, and melted cheese.',
     instructions: `
@@ -121,7 +121,7 @@ const dummyMeals = [
   {
     title: 'Wiener Schnitzel',
     slug: 'wiener-schnitzel',
-    image: '/images/schnitzel.jpg',
+    image: 'https://res.cloudinary.com/a1rxstx7/image/upload/v1789219705/foodies/schnitzel.jpg',
     summary:
       'Crispy, golden-brown breaded veal cutlet, a classic Austrian dish.',
     instructions: `
@@ -143,7 +143,7 @@ const dummyMeals = [
   {
     title: 'Fresh Tomato Salad',
     slug: 'fresh-tomato-salad',
-    image: '/images/tomato-salad.jpg',
+    image: 'https://res.cloudinary.com/a1rxstx7/image/upload/v1789219705/foodies/tomato-salad.jpg',
     summary:
       'A light and refreshing salad with ripe tomatoes, fresh basil, and a tangy vinaigrette.',
     instructions: `
@@ -165,7 +165,7 @@ const dummyMeals = [
   {
     title: 'Paneer Butter Masala',
     slug: 'paneer-butter-masala',
-    image: '/images/paneer-butter-masala.jpg',
+    image: 'https://res.cloudinary.com/a1rxstx7/image/upload/v1789219704/foodies/paneer-butter-masala.jpg',
     summary: 'Blend of tomatoes onion and cottage chesse',
     instructions: 'Please Gravy then prepare the dish',
     creator: 'Ankit',
@@ -187,6 +187,7 @@ db.prepare(`
 `).run();
 
 function initData() {
+  db.prepare('DELETE FROM meals').run();
   const stmt = db.prepare(`
       INSERT INTO meals VALUES (
          null,
