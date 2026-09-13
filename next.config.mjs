@@ -10,6 +10,9 @@ const nextConfig = {
       },
     ],
   },
+  outputFileTracingIncludes: {
+    '/**': ['./meals.db'],
+  },
 };
 
 export default nextConfig;

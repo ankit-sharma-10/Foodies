@@ -40,4 +40,4 @@ yarn-error.log*
 next-env.d.ts
 
 # database
-meals.db
+# meals.db tracked for serverless deployment
